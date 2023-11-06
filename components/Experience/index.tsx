@@ -1,88 +1,98 @@
-import React from 'react'
-import { motion } from "framer-motion"
-import ExperienceCard from "../Experience/ExperienceCard"
-import PayfiLogo from '../../public/svg/PayfiLogo'
-import UseCoinsLogo from "../../public/svg/UseCoinsLogo";
-import DspatchLogo from "../../public/svg/DspatchLogo";
+import React from "react";
+import { motion } from "framer-motion";
+import ExperienceCard from "../Experience/ExperienceCard";
+import IAcademyLogo from "../../public/img/i_academy.jpeg";
+import SideHustleLogo from "../../public/img/sh.jpeg";
+import ZuriLogo from "../../public/svg/zuri.svg";
+import CodeFirstGirlsLogo from "../../public/img/cfg.jpeg";
 
-type Props = {}
+type Props = {};
 
 const myExperience = [
   {
     id: 1,
-    role: "internship",
-    companyName: "PAYFI",
-    CompanyLogo: PayfiLogo,
-    started_at: "1st November 2022",
+    role: "software developer - java (internship)",
+    companyName: "I-ACADEMY",
+    CompanyLogo: IAcademyLogo,
+    started_at: "March 2023",
     ended_at: "Till Now",
-    first_summary: "Clean up merchant frontend codebase to remove redundant codes.",
-    second_summary: "SDK single logging activities.",
-    third_summary:  "Update the SDK to include user inputting their account number before mono connection",
-    fourth_summary: "Payaza integration for collection.",
-    fifth_summary: "Updated investyield repayment tenure to 4months",
+    summary: [
+      "Developed REST APIs using Spring boot and Hibernate.",
+      "Implemented authentication and authorization using JWT security.",
+      "Implemented Two-factor authentication by integrating Termii API.",
+      "Implemented payments through card or bank transfer using monnify API.",
+      "Conducted code reviews and provided feedback to the other developers to ensure code quality.",
+      "Managed deployments and monitored application performance using AWS, Render and Railway.",
+    ],
   },
   {
     id: 2,
-    role: "frontend engineer",
-    companyName: "USECOINS",
-    CompanyLogo: UseCoinsLogo,
-    started_at: "1st July 2022",
-    ended_at: "Till now",
-    first_summary: "Consumed endpoint for finding and listing invoices",
-    second_summary: "Created Invoice generation page/form and consumed endpoint. ",
-    third_summary: "Worked on implementation of website figma design.",
-    fourth_summary: "Create Invoice hosting page.",
-    fifth_summary: "Fixed bugs related to the checkout.",
+    role: "HngX internship",
+    companyName: "ZURI",
+    CompanyLogo: ZuriLogo,
+    started_at: "September 2023",
+    ended_at: "October 2023",
+    summary: [
+      "Developed and maintained APIs for the free lunch application, ensuring seamless communication between various modules and components.",
+      "Collaborated closely with a team of developers, designers, and mentors, actively participating in the planning and execution phases of the project.",
+      "Spearheaded the design and implementation of the organization service module in the free lunch app, enabling efficient management of user data and interactions within the application.",
+      "Successfully integrated video uploading functionality, leveraging AWS S3 bucket services to facilitate secure and scalable storage for user-generated content.",
+      "Actively participated in regular team meetings, offering valuable insights and suggestions to enhance the overall functionality and user experience of the free lunch app.",
+    ],
   },
   {
     id: 3,
-    role: "internship",
-    companyName: "DSpatch",
-    CompanyLogo: DspatchLogo,
-    started_at: "1st December 2022",
-    ended_at: "Till now",
-    first_summary: "Footer Component User Interface.",
-    second_summary: "About Us Page user interface implementation.",
-    third_summary: "Footer Component User Interface.",
-    fourth_summary: "About Us Page user interface implementation.",
-    fifth_summary: "About Us Page user interface implementation.",
+    role: "frontend developer",
+    companyName: "CODE FIRST GIRLS",
+    CompanyLogo: CodeFirstGirlsLogo,
+    started_at: "January 2023",
+    ended_at: "February 2023",
+    summary: [
+      "Collaborated with a team to develop a website called 'Narangya'.",
+      "Contributed to the creation of various pages on the website using HTML, CSS, and JavaScript.",
+      "Gained practical experience in working within a team, managing tasks, and effectively communicating ideas and solutions.",
+    ],
   },
   {
     id: 4,
-    role: "Frontend Engineer",
-    companyName: "FREELANCER",
-    CompanyLogo: DspatchLogo,
-    started_at: "27th June 2021",
-    ended_at: "Till now",
-    first_summary: "Worked with several start-ups.",
-    second_summary: "Collaborated with Teams.",
-    third_summary: "Built web apps",
-    fourth_summary: "******",
-    fifth_summary: "******",
+    role: "internship",
+    companyName: "SIDE HUSTLE",
+    CompanyLogo: SideHustleLogo,
+    started_at: "November 2022",
+    ended_at: "December 2022",
+    summary: [
+      "Attained proficiency in the basics of HTML, CSS, and JavaScript, enabling you to create simple web pages and style them effectively.",
+      "Acquired hands-on experience in building and designing basic web layouts using HTML and CSS, demonstrating a solid understanding of front-end web development principles.",
+      "Demonstrated an ability to implement basic interactivity and dynamic elements on web pages using JavaScript.",
+      "Completed a month-long internship program focused on learning the fundamental concepts of web development.",
+    ],
   },
-]
+];
 
 const index = (props: Props) => {
   return (
-    <motion.div    
+    <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.5}}
+      transition={{ duration: 1.5 }}
+      className="min-h-screen flex relative overflow-hidden flex-col text-left md:flex-row max-w-full px-10 justify-evenly mx-auto items-center"
+    >
+      <h3 className="absolute top-24 uppercase tracking-[10px] md:tracking-[20px] text-gray-500 text-1xl md:text-2xl">
+        Experience
+      </h3>
 
-      className='min-h-screen flex relative overflow-hidden flex-col text-left md:flex-row max-w-full px-10 justify-evenly mx-auto items-center'>
-
-      <h3 className='absolute top-24 uppercase tracking-[10px] md:tracking-[20px] text-gray-500 text-1xl md:text-2xl'>Experience</h3>
-
-      <div className='w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80     
+      <div
+        className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#0074CC]/80     
 
       mt-[95px]
-      '>
-        {myExperience.map((experience) => (        
-        <ExperienceCard key={experience.id} {...experience} />
+      "
+      >
+        {myExperience.map((experience) => (
+          <ExperienceCard key={experience.id} {...experience} />
         ))}
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default index
+export default index;
